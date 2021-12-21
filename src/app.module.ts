@@ -9,8 +9,7 @@ import { CatEntity } from './cats/entities/cat.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
-      port: 3306,
+      host: 'mysqldb',
       username: 'root',
       password: 'root',
       database: 'grantsAndLoans',
