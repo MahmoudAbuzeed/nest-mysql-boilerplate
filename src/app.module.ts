@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { CatsModule } from './cats/cats.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CatEntity } from './cats/entities/cat.entity';
+import { ProjectEntity } from './project/entities/project.entity';
+import { ProjectModule } from './project/project.module';
 
 @Module({
   imports: [
@@ -13,10 +15,11 @@ import { CatEntity } from './cats/entities/cat.entity';
       username: 'root',
       password: 'root',
       database: 'grantsAndLoans',
-      entities: [CatEntity],
+      entities: [CatEntity, ProjectEntity],
       synchronize: true,
     }),
     CatsModule,
+    ProjectModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -14,6 +14,9 @@ export class CatEntity {
   @Column({ default: true })
   isAvailable: boolean;
 
+  @Column({ default: true })
+  isNone: boolean;
+
   @Column({
     type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP',
