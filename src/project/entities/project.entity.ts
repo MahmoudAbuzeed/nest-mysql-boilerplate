@@ -7,6 +7,7 @@ import {
   OneToMany,
 } from 'typeorm';
 import { StackHolderEntity } from 'src/stack-holder/entities/stack-holder.entity';
+import { AttachmentEntity } from 'src/attachment/entities/attachment.entity';
 
 @Entity()
 export class ProjectEntity {
@@ -45,4 +46,7 @@ export class ProjectEntity {
 
   @OneToMany(() => StackHolderEntity, (stackHolder) => stackHolder.project)
   stackHolders: StackHolderEntity[];
+
+  @OneToMany(() => AttachmentEntity, (attachment) => attachment.project)
+  attachments: AttachmentEntity[];
 }
