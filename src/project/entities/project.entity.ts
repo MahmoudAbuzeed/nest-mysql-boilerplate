@@ -4,7 +4,9 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
+import { StackHolderEntity } from 'src/stack-holder/entities/stack-holder.entity';
 
 @Entity()
 export class ProjectEntity {
@@ -23,11 +25,11 @@ export class ProjectEntity {
   @Column({ length: 40 })
   type: string;
 
-  @Column({ type: 'date' })
-  start_date: string;
+  @Column({ nullable: true })
+  start_date: Date;
 
-  @Column({ type: 'date' })
-  end_date: string;
+  @Column({ nullable: true })
+  end_date: Date;
 
   @Column()
   description: string;
@@ -40,4 +42,7 @@ export class ProjectEntity {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @OneToMany(() => StackHolderEntity, (stackHolder) => stackHolder.project)
+  stackHolders: StackHolderEntity[];
 }
