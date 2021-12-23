@@ -5,6 +5,7 @@ import { ComponentModule } from './component/component.module';
 import { ProjectModule } from './project/project.module';
 import { TaskModule } from './task/task.module';
 import { TaskReferenceModule } from './task-reference/task-reference.module';
+import { SectorModule } from './sector/sector.module';
 
 export const modules = [
   ProjectModule,
@@ -14,4 +15,5 @@ export const modules = [
   ComponentModule,
   TaskModule,
   TaskReferenceModule,
+  SectorModule,
 ];

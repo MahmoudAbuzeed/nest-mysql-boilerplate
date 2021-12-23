@@ -6,9 +6,12 @@ import {
   UpdateDateColumn,
   ManyToOne,
   OneToMany,
+  ManyToMany,
+  JoinTable,
 } from 'typeorm';
 import { ProjectEntity } from 'src/project/entities/project.entity';
 import { TaskEntity } from 'src/task/entities/task.entity';
+import { SectorEntity } from 'src/sector/entities/sector.entity';
 
 @Entity()
 export class ComponentEntity {
@@ -59,4 +62,8 @@ export class ComponentEntity {
 
   @OneToMany(() => TaskEntity, (task) => task.component)
   tasks: TaskEntity[];
+
+  @ManyToMany(() => SectorEntity, (sector) => sector.components)
+  @JoinTable()
+  sectors: SectorEntity[];
 }
