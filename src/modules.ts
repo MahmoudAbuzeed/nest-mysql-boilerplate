@@ -4,6 +4,7 @@ import { AttachmentModule } from './attachment/attachment.module';
 import { ComponentModule } from './component/component.module';
 import { ProjectModule } from './project/project.module';
 import { TaskModule } from './task/task.module';
+import { TaskReferenceModule } from './task-reference/task-reference.module';
 
 export const modules = [
   ProjectModule,
@@ -12,4 +13,5 @@ export const modules = [
   ProjectHistoryModule,
   ComponentModule,
   TaskModule,
+  TaskReferenceModule,
 ];

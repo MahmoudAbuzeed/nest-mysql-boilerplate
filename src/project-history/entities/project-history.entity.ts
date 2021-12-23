@@ -4,7 +4,11 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToOne,
+  JoinColumn,
 } from 'typeorm';
+
+import { ProjectEntity } from 'src/project/entities/project.entity';
 
 @Entity()
 export class ProjectHistoryEntity {
@@ -31,4 +35,8 @@ export class ProjectHistoryEntity {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @OneToOne(() => ProjectEntity)
+  @JoinColumn()
+  project: ProjectEntity;
 }

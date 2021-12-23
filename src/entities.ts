@@ -4,6 +4,7 @@ import { AttachmentEntity } from './attachment/entities/attachment.entity';
 import { ComponentEntity } from './component/entities/component.entity';
 import { ProjectEntity } from './project/entities/project.entity';
 import { TaskEntity } from './task/entities/task.entity';
+import { TaskReferenceEntity } from './task-reference/entities/task-reference.entity';
 
 export const entities = [
   ProjectEntity,
@@ -12,4 +13,5 @@ export const entities = [
   ProjectHistoryEntity,
   ComponentEntity,
   TaskEntity,
+  TaskReferenceEntity,
 ];

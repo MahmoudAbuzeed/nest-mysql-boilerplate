@@ -5,12 +5,9 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToMany,
-  OneToOne,
-  JoinColumn,
 } from 'typeorm';
 import { StackHolderEntity } from 'src/stack-holder/entities/stack-holder.entity';
 import { AttachmentEntity } from 'src/attachment/entities/attachment.entity';
-import { ProjectHistoryEntity } from 'src/project-history/entities/project-history.entity';
 import { ComponentEntity } from 'src/component/entities/component.entity';
 
 @Entity()
@@ -56,8 +53,4 @@ export class ProjectEntity {
 
   @OneToMany(() => AttachmentEntity, (attachment) => attachment.project)
   attachments: AttachmentEntity[];
-
-  @OneToOne(() => ProjectHistoryEntity)
-  @JoinColumn()
-  project_history: ProjectHistoryEntity;
 }

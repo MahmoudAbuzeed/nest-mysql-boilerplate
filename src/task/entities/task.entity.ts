@@ -5,8 +5,10 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   ManyToOne,
+  OneToMany,
 } from 'typeorm';
 import { ComponentEntity } from 'src/component/entities/component.entity';
+import { TaskReferenceEntity } from 'src/task-reference/entities/task-reference.entity';
 
 @Entity()
 export class TaskEntity {
@@ -54,4 +56,7 @@ export class TaskEntity {
 
   @ManyToOne(() => ComponentEntity, (component) => component.tasks)
   component: ComponentEntity;
+
+  @OneToMany(() => TaskReferenceEntity, (taskReference) => taskReference.task)
+  taskReferences: TaskReferenceEntity[];
 }

@@ -7,6 +7,7 @@ import { AppService } from './app.service';
 
 import { modules } from './modules';
 import { entities } from './entities';
+import { TaskReferenceModule } from './task-reference/task-reference.module';
 
 @Module({
   imports: [
