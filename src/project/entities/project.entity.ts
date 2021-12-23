@@ -11,6 +11,7 @@ import {
 import { StackHolderEntity } from 'src/stack-holder/entities/stack-holder.entity';
 import { AttachmentEntity } from 'src/attachment/entities/attachment.entity';
 import { ProjectHistoryEntity } from 'src/project-history/entities/project-history.entity';
+import { ComponentEntity } from 'src/component/entities/component.entity';
 
 @Entity()
 export class ProjectEntity {
@@ -49,6 +50,9 @@ export class ProjectEntity {
 
   @OneToMany(() => StackHolderEntity, (stackHolder) => stackHolder.project)
   stackHolders: StackHolderEntity[];
+
+  @OneToMany(() => ComponentEntity, (component) => component.project)
+  components: ComponentEntity[];
 
   @OneToMany(() => AttachmentEntity, (attachment) => attachment.project)
   attachments: AttachmentEntity[];

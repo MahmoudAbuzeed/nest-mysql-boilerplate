@@ -6,12 +6,14 @@ import { StackHolderModule } from './stack-holder/stack-holder.module';
 import { StackHolderEntity } from './stack-holder/entities/stack-holder.entity';
 import { ProjectEntity } from './project/entities/project.entity';
 import { AttachmentEntity } from './attachment/entities/attachment.entity';
+import { ComponentEntity } from './component/entities/component.entity';
 import { ProjectHistoryEntity } from './project-history/entities/project-history.entity';
 import { ProjectModule } from './project/project.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AttachmentModule } from './attachment/attachment.module';
 import { ProjectHistoryModule } from './project-history/project-history.module';
+import { ComponentModule } from './component/component.module';
 
 @Module({
   imports: [
@@ -29,6 +31,7 @@ import { ProjectHistoryModule } from './project-history/project-history.module';
         StackHolderEntity,
         AttachmentEntity,
         ProjectHistoryEntity,
+        ComponentEntity,
       ],
       synchronize: true,
     }),
@@ -36,6 +39,7 @@ import { ProjectHistoryModule } from './project-history/project-history.module';
     StackHolderModule,
     AttachmentModule,
     ProjectHistoryModule,
+    ComponentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
