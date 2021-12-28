@@ -6,6 +6,8 @@ import { ProjectEntity } from './project/entities/project.entity';
 import { TaskEntity } from './task/entities/task.entity';
 import { TaskReferenceEntity } from './task-reference/entities/task-reference.entity';
 import { SectorEntity } from './sector/entities/sector.entity';
+import { SectorPlanEntity } from './sector-plan/entities/sector-plan.entity';
+import { SectorGoalEntity } from './sector-goal/entities/sector-goal.entity';
 
 export const entities = [
   ProjectEntity,
@@ -16,4 +18,6 @@ export const entities = [
   TaskEntity,
   TaskReferenceEntity,
   SectorEntity,
+  SectorPlanEntity,
+  SectorGoalEntity,
 ];

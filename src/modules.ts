@@ -6,6 +6,8 @@ import { ProjectModule } from './project/project.module';
 import { TaskModule } from './task/task.module';
 import { TaskReferenceModule } from './task-reference/task-reference.module';
 import { SectorModule } from './sector/sector.module';
+import { SectorPlanModule } from './sector-plan/sector-plan.module';
+import { SectorGoalModule } from './sector-goal/sector-goal.module';
 
 export const modules = [
   ProjectModule,
@@ -16,4 +18,6 @@ export const modules = [
   TaskModule,
   TaskReferenceModule,
   SectorModule,
+  SectorPlanModule,
+  SectorGoalModule,
 ];

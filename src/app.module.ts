@@ -7,8 +7,6 @@ import { AppService } from './app.service';
 
 import { modules } from './modules';
 import { entities } from './entities';
-import { TaskReferenceModule } from './task-reference/task-reference.module';
-import { SectorModule } from './sector/sector.module';
 
 @Module({
   imports: [
@@ -25,7 +23,6 @@ import { SectorModule } from './sector/sector.module';
       synchronize: true,
     }),
     ...modules,
-    SectorModule,
   ],
   controllers: [AppController],
   providers: [AppService],
