@@ -8,6 +8,7 @@ import { TaskReferenceEntity } from './task-reference/entities/task-reference.en
 import { SectorEntity } from './sector/entities/sector.entity';
 import { SectorPlanEntity } from './sector-plan/entities/sector-plan.entity';
 import { SectorGoalEntity } from './sector-goal/entities/sector-goal.entity';
+import { UserEntity } from './user/entities/user.entity';
 
 export const entities = [
   ProjectEntity,
@@ -20,4 +21,5 @@ export const entities = [
   SectorEntity,
   SectorPlanEntity,
   SectorGoalEntity,
+  UserEntity,
 ];

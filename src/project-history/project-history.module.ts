@@ -7,7 +7,6 @@ import { ProjectHistoryEntity } from './entities/project-history.entity';
 import { ProjectHistoryRepo } from './project-history.repository';
 @Module({
   imports: [TypeOrmModule.forFeature([ProjectHistoryEntity])],
-
   controllers: [ProjectHistoryController],
   providers: [ProjectHistoryService, ProjectHistoryRepo],
 })

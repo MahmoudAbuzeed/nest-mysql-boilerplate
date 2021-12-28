@@ -8,6 +8,7 @@ import { TaskReferenceModule } from './task-reference/task-reference.module';
 import { SectorModule } from './sector/sector.module';
 import { SectorPlanModule } from './sector-plan/sector-plan.module';
 import { SectorGoalModule } from './sector-goal/sector-goal.module';
+import { UserModule } from './user/user.module';
 
 export const modules = [
   ProjectModule,
@@ -20,4 +21,5 @@ export const modules = [
   SectorModule,
   SectorPlanModule,
   SectorGoalModule,
+  UserModule,
 ];
