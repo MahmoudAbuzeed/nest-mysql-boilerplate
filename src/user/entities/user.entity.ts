@@ -8,6 +8,7 @@ import {
 } from 'typeorm';
 
 import { SectorEntity } from 'src/sector/entities/sector.entity';
+import { DepartmentEntity } from 'src/department/entities/department.entity';
 
 @Entity()
 export class UserEntity {
@@ -37,4 +38,7 @@ export class UserEntity {
 
   @ManyToOne(() => SectorEntity)
   sector: SectorEntity;
+
+  @ManyToOne(() => DepartmentEntity)
+  department: DepartmentEntity;
 }

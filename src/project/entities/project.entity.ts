@@ -5,10 +5,12 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToMany,
+  ManyToOne,
 } from 'typeorm';
 import { StackHolderEntity } from 'src/stack-holder/entities/stack-holder.entity';
 import { AttachmentEntity } from 'src/attachment/entities/attachment.entity';
 import { ComponentEntity } from 'src/component/entities/component.entity';
+import { DepartmentEntity } from 'src/department/entities/department.entity';
 
 @Entity()
 export class ProjectEntity {
@@ -36,9 +38,6 @@ export class ProjectEntity {
   @Column()
   description: string;
 
-  //   @Column({ default: true })
-  //   isAvailable: boolean;
-
   @CreateDateColumn()
   created_at: Date;
 
@@ -53,4 +52,7 @@ export class ProjectEntity {
 
   @OneToMany(() => AttachmentEntity, (attachment) => attachment.project)
   attachments: AttachmentEntity[];
+
+  @ManyToOne(() => DepartmentEntity)
+  department: DepartmentEntity;
 }

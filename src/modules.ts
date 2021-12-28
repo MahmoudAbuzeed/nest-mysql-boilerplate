@@ -10,6 +10,7 @@ import { SectorPlanModule } from './sector-plan/sector-plan.module';
 import { SectorGoalModule } from './sector-goal/sector-goal.module';
 import { UserModule } from './user/user.module';
 import { RoleModule } from './role/role.module';
+import { DepartmentModule } from './department/department.module';
 
 export const modules = [
   ProjectModule,
@@ -24,4 +25,5 @@ export const modules = [
   SectorGoalModule,
   UserModule,
   RoleModule,
+  DepartmentModule,
 ];
