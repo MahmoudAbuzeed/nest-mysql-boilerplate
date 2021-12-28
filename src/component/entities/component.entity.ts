@@ -63,7 +63,7 @@ export class ComponentEntity {
   @OneToMany(() => TaskEntity, (task) => task.component)
   tasks: TaskEntity[];
 
-  @ManyToMany(() => SectorEntity, (sector) => sector.components)
+  @ManyToMany(() => SectorEntity)
   @JoinTable()
   sectors: SectorEntity[];
 }

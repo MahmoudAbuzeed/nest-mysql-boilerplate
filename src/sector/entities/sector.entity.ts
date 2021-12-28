@@ -26,7 +26,7 @@ export class SectorEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToMany(() => ComponentEntity, (component) => component.sectors)
-  @JoinTable()
-  components: ComponentEntity[];
+  // @ManyToMany(() => ComponentEntity, (component) => component.sectors)
+  // @JoinTable()
+  // components: ComponentEntity[];
 }
