@@ -9,6 +9,7 @@ import { SectorEntity } from './sector/entities/sector.entity';
 import { SectorPlanEntity } from './sector-plan/entities/sector-plan.entity';
 import { SectorGoalEntity } from './sector-goal/entities/sector-goal.entity';
 import { UserEntity } from './user/entities/user.entity';
+import { RoleEntity } from './role/entities/role.entity';
 
 export const entities = [
   ProjectEntity,
@@ -22,4 +23,5 @@ export const entities = [
   SectorPlanEntity,
   SectorGoalEntity,
   UserEntity,
+  RoleEntity,
 ];
