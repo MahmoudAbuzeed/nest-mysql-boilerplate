@@ -17,6 +17,7 @@ export class ProjectController {
 
   @Post()
   create(@Body() createProjectDto: CreateProjectDto) {
+    createProjectDto.start_date = new Date(createProjectDto.start_date);
     return this.projectService.create(createProjectDto);
   }
 

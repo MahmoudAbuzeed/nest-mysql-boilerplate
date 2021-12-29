@@ -4,7 +4,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ComponentService } from './component.service';
 import { ComponentController } from './component.controller';
 import { Component } from './entities/component.entity';
-
 import { ComponentRepo } from './component.repository';
 
 @Module({

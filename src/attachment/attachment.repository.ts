@@ -2,9 +2,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 
-import { CreateAttachmentDto } from './dto/create-attachment.dto';
-import { UpdateAttachmentDto } from './dto/update-attachment.dto';
-
 import { Attachment } from './entities/attachment.entity';
 
 @Injectable()
@@ -14,8 +11,10 @@ export class AttachmentRepo {
     private attachmentRepository: Repository<Attachment>,
   ) {}
 
-  async create(createProjectDto: CreateAttachmentDto) {
-    return await this.attachmentRepository.save(createProjectDto);
+  async create(createAttachmentDto: Partial<Attachment>) {
+    console.log(createAttachmentDto.project);
+    console.log(typeof createAttachmentDto.project);
+    return await this.attachmentRepository.save(createAttachmentDto);
   }
 
   async findAll() {
@@ -26,8 +25,8 @@ export class AttachmentRepo {
     return await this.attachmentRepository.findOne(id);
   }
 
-  async update(id: number, updateProjectDto: UpdateAttachmentDto) {
-    return await this.attachmentRepository.update(id, updateProjectDto);
+  async update(id: number, updateAttachmentDto: Partial<Attachment>) {
+    return await this.attachmentRepository.update(id, updateAttachmentDto);
   }
 
   async remove(id: number) {

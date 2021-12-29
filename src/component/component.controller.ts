@@ -17,6 +17,8 @@ export class ComponentController {
 
   @Post()
   create(@Body() createComponentDto: CreateComponentDto) {
+    createComponentDto.start_date = new Date(createComponentDto.start_date);
+    createComponentDto.start_date = new Date(createComponentDto.start_date);
     return this.componentService.create(createComponentDto);
   }
 
@@ -35,6 +37,8 @@ export class ComponentController {
     @Param('id') id: string,
     @Body() updateComponentDto: UpdateComponentDto,
   ) {
+    updateComponentDto.start_date = new Date(updateComponentDto.start_date);
+    updateComponentDto.start_date = new Date(updateComponentDto.start_date);
     return this.componentService.update(+id, updateComponentDto);
   }
 

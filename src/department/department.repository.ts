@@ -4,7 +4,6 @@ import { Repository } from 'typeorm';
 
 import { CreateDepartmentDto } from './dto/create-department.dto';
 import { UpdateDepartmentDto } from './dto/update-department.dto';
-
 import { Department } from './entities/department.entity';
 
 @Injectable()

@@ -17,6 +17,8 @@ export class TaskController {
 
   @Post()
   create(@Body() createTaskDto: CreateTaskDto) {
+    createTaskDto.start_date = new Date(createTaskDto.start_date);
+    createTaskDto.start_date = new Date(createTaskDto.start_date);
     return this.taskService.create(createTaskDto);
   }
 
@@ -32,6 +34,8 @@ export class TaskController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto) {
+    updateTaskDto.start_date = new Date(updateTaskDto.start_date);
+    updateTaskDto.start_date = new Date(updateTaskDto.start_date);
     return this.taskService.update(+id, updateTaskDto);
   }
 

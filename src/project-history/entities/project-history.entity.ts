@@ -20,7 +20,7 @@ export class ProjectHistory {
   @Column({ length: 40 })
   to_status: string;
 
-  @Column({ length: 40 })
+  @Column()
   message: string;
 
   @Column({ length: 40 })
