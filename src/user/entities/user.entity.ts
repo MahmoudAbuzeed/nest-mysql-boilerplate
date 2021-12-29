@@ -7,11 +7,11 @@ import {
   ManyToOne,
 } from 'typeorm';
 
-import { SectorEntity } from 'src/sector/entities/sector.entity';
-import { DepartmentEntity } from 'src/department/entities/department.entity';
+import { Sector } from 'src/sector/entities/sector.entity';
+import { Department } from 'src/department/entities/department.entity';
 
 @Entity()
-export class UserEntity {
+export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -36,9 +36,9 @@ export class UserEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToOne(() => SectorEntity)
-  sector: SectorEntity;
+  @ManyToOne(() => Sector)
+  sector: Sector;
 
-  @ManyToOne(() => DepartmentEntity)
-  department: DepartmentEntity;
+  @ManyToOne(() => Department)
+  department: Department;
 }

@@ -7,10 +7,10 @@ import {
   ManyToMany,
   JoinTable,
 } from 'typeorm';
-import { UserEntity } from 'src/user/entities/user.entity';
+import { User } from 'src/user/entities/user.entity';
 
 @Entity()
-export class RoleEntity {
+export class Role {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -26,7 +26,7 @@ export class RoleEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToMany(() => UserEntity)
+  @ManyToMany(() => User)
   @JoinTable()
-  users: UserEntity[];
+  users: User[];
 }

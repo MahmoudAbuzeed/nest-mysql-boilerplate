@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
-import { ProjectEntity } from 'src/project/entities/project.entity';
+import { Project } from 'src/project/entities/project.entity';
 
 @Entity()
 export class ProjectObjective {
@@ -9,6 +9,6 @@ export class ProjectObjective {
   @Column()
   goal: string;
 
-  @ManyToOne(() => ProjectEntity)
-  project: ProjectEntity;
+  @ManyToOne(() => Project)
+  project: Project;
 }

@@ -4,13 +4,12 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  ManyToMany,
-  JoinTable,
+  ManyToOne,
 } from 'typeorm';
-import { ComponentEntity } from 'src/component/entities/component.entity';
+import { Project } from 'src/project/entities/project.entity';
 
 @Entity()
-export class SectorEntity {
+export class Sector {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -26,7 +25,6 @@ export class SectorEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  // @ManyToMany(() => ComponentEntity, (component) => component.sectors)
-  // @JoinTable()
-  // components: ComponentEntity[];
+  @ManyToOne(() => Project)
+  project: Project;
 }

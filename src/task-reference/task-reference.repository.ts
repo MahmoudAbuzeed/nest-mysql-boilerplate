@@ -5,13 +5,13 @@ import { Repository } from 'typeorm';
 import { CreateTaskReferenceDto } from './dto/create-task-reference.dto';
 import { UpdateTaskReferenceDto } from './dto/update-task-reference.dto';
 
-import { TaskReferenceEntity } from './entities/task-reference.entity';
+import { TaskReference } from './entities/task-reference.entity';
 
 @Injectable()
 export class TaskReferenceRepo {
   constructor(
-    @InjectRepository(TaskReferenceEntity)
-    private taskReferencesRepository: Repository<TaskReferenceEntity>,
+    @InjectRepository(TaskReference)
+    private taskReferencesRepository: Repository<TaskReference>,
   ) {}
 
   async create(createTaskReferenceDto: CreateTaskReferenceDto) {

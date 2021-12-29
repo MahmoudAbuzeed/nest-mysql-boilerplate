@@ -5,13 +5,13 @@ import { Repository } from 'typeorm';
 import { CreateProjectHistoryDto } from './dto/create-project-history.dto';
 import { UpdateProjectHistoryDto } from './dto/update-project-history.dto';
 
-import { ProjectHistoryEntity } from './entities/project-history.entity';
+import { ProjectHistory } from './entities/project-history.entity';
 
 @Injectable()
 export class ProjectHistoryRepo {
   constructor(
-    @InjectRepository(ProjectHistoryEntity)
-    private projectHistoryRepository: Repository<ProjectHistoryEntity>,
+    @InjectRepository(ProjectHistory)
+    private projectHistoryRepository: Repository<ProjectHistory>,
   ) {}
 
   async create(createProjectHistoryDto: CreateProjectHistoryDto) {

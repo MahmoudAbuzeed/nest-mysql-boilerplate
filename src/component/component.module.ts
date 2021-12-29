@@ -3,12 +3,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { ComponentService } from './component.service';
 import { ComponentController } from './component.controller';
-import { ComponentEntity } from './entities/component.entity';
+import { Component } from './entities/component.entity';
 
 import { ComponentRepo } from './component.repository';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([ComponentEntity])],
+  imports: [TypeOrmModule.forFeature([Component])],
 
   controllers: [ComponentController],
   providers: [ComponentService, ComponentRepo],

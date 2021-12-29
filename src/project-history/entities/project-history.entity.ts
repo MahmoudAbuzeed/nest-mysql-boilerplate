@@ -4,14 +4,13 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  OneToOne,
-  JoinColumn,
+  ManyToOne,
 } from 'typeorm';
 
-import { ProjectEntity } from 'src/project/entities/project.entity';
+import { Project } from 'src/project/entities/project.entity';
 
 @Entity()
-export class ProjectHistoryEntity {
+export class ProjectHistory {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -36,7 +35,6 @@ export class ProjectHistoryEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @OneToOne(() => ProjectEntity)
-  @JoinColumn()
-  project: ProjectEntity;
+  @ManyToOne(() => Project)
+  project: Project;
 }

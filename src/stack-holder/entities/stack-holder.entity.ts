@@ -6,10 +6,10 @@ import {
   UpdateDateColumn,
   ManyToOne,
 } from 'typeorm';
-import { ProjectEntity } from 'src/project/entities/project.entity';
+import { Project } from 'src/project/entities/project.entity';
 
 @Entity()
-export class StackHolderEntity {
+export class StackHolder {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -28,6 +28,6 @@ export class StackHolderEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToOne(() => ProjectEntity, (project) => project.stackHolders)
-  project: ProjectEntity;
+  @ManyToOne(() => Project)
+  project: Project;
 }

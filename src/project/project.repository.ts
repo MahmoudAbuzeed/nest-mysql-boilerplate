@@ -4,13 +4,13 @@ import { Repository } from 'typeorm';
 
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
-import { ProjectEntity } from './entities/project.entity';
+import { Project } from './entities/project.entity';
 
 @Injectable()
 export class ProjectRepo {
   constructor(
-    @InjectRepository(ProjectEntity)
-    private projectRepository: Repository<ProjectEntity>,
+    @InjectRepository(Project)
+    private projectRepository: Repository<Project>,
   ) {}
 
   async create(createProjectDto: CreateProjectDto) {

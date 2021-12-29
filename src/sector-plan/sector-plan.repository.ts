@@ -4,13 +4,13 @@ import { Repository } from 'typeorm';
 
 import { CreateSectorPlanDto } from './dto/create-sector-plan.dto';
 import { UpdateSectorPlanDto } from './dto/update-sector-plan.dto';
-import { SectorPlanEntity } from './entities/sector-plan.entity';
+import { SectorPlan } from './entities/sector-plan.entity';
 
 @Injectable()
 export class SectorPlanRepo {
   constructor(
-    @InjectRepository(SectorPlanEntity)
-    private sectorPlanRepository: Repository<SectorPlanEntity>,
+    @InjectRepository(SectorPlan)
+    private sectorPlanRepository: Repository<SectorPlan>,
   ) {}
 
   async create(createSectorPlantDto: CreateSectorPlanDto) {

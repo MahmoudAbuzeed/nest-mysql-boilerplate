@@ -5,13 +5,13 @@ import { Repository } from 'typeorm';
 import { CreateRoleDto } from './dto/create-role.dto';
 import { UpdateRoleDto } from './dto/update-role.dto';
 
-import { RoleEntity } from './entities/role.entity';
+import { Role } from './entities/role.entity';
 
 @Injectable()
 export class RoleRepo {
   constructor(
-    @InjectRepository(RoleEntity)
-    private roleRepository: Repository<RoleEntity>,
+    @InjectRepository(Role)
+    private roleRepository: Repository<Role>,
   ) {}
 
   async create(createRoleDto: CreateRoleDto) {

@@ -4,13 +4,13 @@ import { Repository } from 'typeorm';
 
 import { CreateStackHolderDto } from './dto/create-stack-holder.dto';
 import { UpdateStackHolderDto } from './dto/update-stack-holder.dto';
-import { StackHolderEntity } from './entities/stack-holder.entity';
+import { StackHolder } from './entities/stack-holder.entity';
 
 @Injectable()
 export class StackHolderRepo {
   constructor(
-    @InjectRepository(StackHolderEntity)
-    private stackHolderRepo: Repository<StackHolderEntity>,
+    @InjectRepository(StackHolder)
+    private stackHolderRepo: Repository<StackHolder>,
   ) {}
 
   async create(createProjectDto: CreateStackHolderDto) {

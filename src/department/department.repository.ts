@@ -5,13 +5,13 @@ import { Repository } from 'typeorm';
 import { CreateDepartmentDto } from './dto/create-department.dto';
 import { UpdateDepartmentDto } from './dto/update-department.dto';
 
-import { DepartmentEntity } from './entities/department.entity';
+import { Department } from './entities/department.entity';
 
 @Injectable()
 export class DepartmentRepo {
   constructor(
-    @InjectRepository(DepartmentEntity)
-    private departmentRepository: Repository<DepartmentEntity>,
+    @InjectRepository(Department)
+    private departmentRepository: Repository<Department>,
   ) {}
 
   async create(createDepartmentDto: CreateDepartmentDto) {

@@ -5,13 +5,13 @@ import { Repository } from 'typeorm';
 import { CreateAttachmentDto } from './dto/create-attachment.dto';
 import { UpdateAttachmentDto } from './dto/update-attachment.dto';
 
-import { AttachmentEntity } from './entities/attachment.entity';
+import { Attachment } from './entities/attachment.entity';
 
 @Injectable()
 export class AttachmentRepo {
   constructor(
-    @InjectRepository(AttachmentEntity)
-    private attachmentRepository: Repository<AttachmentEntity>,
+    @InjectRepository(Attachment)
+    private attachmentRepository: Repository<Attachment>,
   ) {}
 
   async create(createProjectDto: CreateAttachmentDto) {

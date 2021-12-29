@@ -6,10 +6,10 @@ import {
   UpdateDateColumn,
   ManyToOne,
 } from 'typeorm';
-import { ProjectEntity } from 'src/project/entities/project.entity';
+import { Project } from 'src/project/entities/project.entity';
 
 @Entity()
-export class AttachmentEntity {
+export class Attachment {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -37,6 +37,6 @@ export class AttachmentEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToOne(() => ProjectEntity, (project) => project.attachments)
-  project: ProjectEntity;
+  @ManyToOne(() => Project)
+  project: Project;
 }

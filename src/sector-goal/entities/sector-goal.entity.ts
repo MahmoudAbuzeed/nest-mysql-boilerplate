@@ -6,10 +6,10 @@ import {
   UpdateDateColumn,
   ManyToOne,
 } from 'typeorm';
-import { SectorPlanEntity } from 'src/sector-plan/entities/sector-plan.entity';
+import { SectorPlan } from 'src/sector-plan/entities/sector-plan.entity';
 
 @Entity()
-export class SectorGoalEntity {
+export class SectorGoal {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -37,6 +37,6 @@ export class SectorGoalEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToOne(() => SectorPlanEntity)
-  sectorPlan: SectorPlanEntity;
+  @ManyToOne(() => SectorPlan)
+  sectorPlan: SectorPlan;
 }

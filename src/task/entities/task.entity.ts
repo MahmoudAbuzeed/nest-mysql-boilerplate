@@ -5,13 +5,11 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   ManyToOne,
-  OneToMany,
 } from 'typeorm';
-import { ComponentEntity } from 'src/component/entities/component.entity';
-import { TaskReferenceEntity } from 'src/task-reference/entities/task-reference.entity';
+import { Component } from 'src/component/entities/component.entity';
 
 @Entity()
-export class TaskEntity {
+export class Task {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -54,9 +52,6 @@ export class TaskEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToOne(() => ComponentEntity, (component) => component.tasks)
-  component: ComponentEntity;
-
-  @OneToMany(() => TaskReferenceEntity, (taskReference) => taskReference.task)
-  taskReferences: TaskReferenceEntity[];
+  @ManyToOne(() => Component)
+  component: Component;
 }

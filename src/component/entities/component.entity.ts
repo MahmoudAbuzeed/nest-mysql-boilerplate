@@ -5,16 +5,14 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   ManyToOne,
-  OneToMany,
   ManyToMany,
   JoinTable,
 } from 'typeorm';
-import { ProjectEntity } from 'src/project/entities/project.entity';
-import { TaskEntity } from 'src/task/entities/task.entity';
-import { SectorEntity } from 'src/sector/entities/sector.entity';
+import { Project } from 'src/project/entities/project.entity';
+import { Sector } from 'src/sector/entities/sector.entity';
 
 @Entity()
-export class ComponentEntity {
+export class Component {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -57,13 +55,10 @@ export class ComponentEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToOne(() => ProjectEntity, (project) => project.components)
-  project: ProjectEntity;
+  @ManyToOne(() => Project)
+  project: Project;
 
-  @OneToMany(() => TaskEntity, (task) => task.component)
-  tasks: TaskEntity[];
-
-  @ManyToMany(() => SectorEntity)
+  @ManyToMany(() => Sector)
   @JoinTable()
-  sectors: SectorEntity[];
+  sectors: Sector[];
 }
