@@ -11,8 +11,10 @@ import { SectorEntity } from './sector/entities/sector.entity';
 import { TaskEntity } from './task/entities/task.entity';
 import { UserEntity } from './user/entities/user.entity';
 import { RoleEntity } from './role/entities/role.entity';
+import { ProjectObjective } from './project-objective/entities/project-objective.entity';
 
 export const entities = [
+  ProjectObjective,
   ProjectHistoryEntity,
   TaskReferenceEntity,
   StackHolderEntity,
