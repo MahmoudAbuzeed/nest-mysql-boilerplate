@@ -17,6 +17,8 @@ export class SectorPlanController {
 
   @Post()
   create(@Body() createSectorPlanDto: CreateSectorPlanDto) {
+    createSectorPlanDto.start_date = new Date(createSectorPlanDto.start_date);
+    createSectorPlanDto.start_date = new Date(createSectorPlanDto.start_date);
     return this.sectorPlanService.create(createSectorPlanDto);
   }
 
@@ -35,6 +37,8 @@ export class SectorPlanController {
     @Param('id') id: string,
     @Body() updateSectorPlanDto: UpdateSectorPlanDto,
   ) {
+    updateSectorPlanDto.start_date = new Date(updateSectorPlanDto.start_date);
+    updateSectorPlanDto.start_date = new Date(updateSectorPlanDto.start_date);
     return this.sectorPlanService.update(+id, updateSectorPlanDto);
   }
 

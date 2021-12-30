@@ -3,6 +3,8 @@ import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 
 import { Attachment } from './entities/attachment.entity';
+import { CreateAttachmentDto } from './dto/create-attachment.dto';
+import { UpdateAttachmentDto } from './dto/update-attachment.dto';
 
 @Injectable()
 export class AttachmentRepo {
@@ -11,9 +13,7 @@ export class AttachmentRepo {
     private attachmentRepository: Repository<Attachment>,
   ) {}
 
-  async create(createAttachmentDto: Partial<Attachment>) {
-    console.log(createAttachmentDto.project);
-    console.log(typeof createAttachmentDto.project);
+  async create(createAttachmentDto: CreateAttachmentDto) {
     return await this.attachmentRepository.save(createAttachmentDto);
   }
 
@@ -25,7 +25,7 @@ export class AttachmentRepo {
     return await this.attachmentRepository.findOne(id);
   }
 
-  async update(id: number, updateAttachmentDto: Partial<Attachment>) {
+  async update(id: number, updateAttachmentDto: UpdateAttachmentDto) {
     return await this.attachmentRepository.update(id, updateAttachmentDto);
   }
 

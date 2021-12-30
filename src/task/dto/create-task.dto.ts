@@ -1,7 +1,6 @@
 import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { Component } from 'src/component/entities/component.entity';
 import { Sector } from 'src/sector/entities/sector.entity';
-import { TaskReference } from 'src/task-reference/entities/task-reference.entity';
 
 export class CreateTaskDto {
   @IsString()
@@ -51,4 +50,8 @@ export class CreateTaskDto {
   @IsNumber()
   @IsNotEmpty()
   component: Component;
+
+  @IsNumber()
+  @IsNotEmpty()
+  sectors: Sector[];
 }
