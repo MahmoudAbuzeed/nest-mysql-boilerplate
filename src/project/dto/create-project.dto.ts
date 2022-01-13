@@ -1,4 +1,10 @@
-import { IsDateString, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import {
+  IsArray,
+  IsDateString,
+  IsNotEmpty,
+  IsNumber,
+  IsString,
+} from 'class-validator';
 import { Department } from 'src/department/entities/department.entity';
 
 export class CreateProjectDto {
@@ -29,6 +35,12 @@ export class CreateProjectDto {
   @IsString()
   @IsNotEmpty()
   description: string;
+
+  @IsArray()
+  components: any;
+
+  @IsArray()
+  activities: any;
 
   @IsNumber()
   @IsNotEmpty()
