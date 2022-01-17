@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: grantsAndLoans
+      MYSQL_DATABASE: nest-mysql-boilerplate
     volumes: 
       - db-config:/etc/mysql
       - db-data:/var/lib/mysql
